@@ -1,0 +1,5 @@
+1.Tạo một Todolớp để đại diện cho các mục việc cần làm của bạn. Lớp này phải có các thuộc tính cho tiêu đề, mô tả và trạng thái của mục.
+2.Tạo một TodoListlớp để đại diện cho một danh sách các mục việc cần làm. Lớp này phải có các phương thức để thêm, xóa và cập nhật các mục việc cần làm.
+3.Tạo một TodoControllerlớp để xử lý giao tiếp với API REST. Lớp này phải có các phương thức để nhận, tạo, cập nhật và xóa các mục việc cần làm.
+4.Sử dụng TodoControllerlớp để điền TodoListdữ liệu của bạn từ API REST.
+5.Hiển thị TodoListtrong ứng dụng Flutter của bạn.
