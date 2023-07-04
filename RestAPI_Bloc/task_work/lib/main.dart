@@ -19,17 +19,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'ToDo M-You App',
       theme: ThemeData(
-          useMaterial3: true,
-          primaryColor: const Color(0XFFceef86),
-          backgroundColor: const Color(0XFF201a1a)),
+        useMaterial3: true,
+        primaryColor: const Color(0XFFceef86),
+        backgroundColor: const Color(0XFF201a1a),
+      ),
       home: RepositoryProvider(
         create: (context) => TaskRepository(),
         child: MultiBlocProvider(
           providers: [
             BlocProvider(
-                create: (context) => TasksBloc(
-                      RepositoryProvider.of<TaskRepository>(context),
-                    )..add(LoadTask()))
+              create: (context) => TasksBloc(
+                RepositoryProvider.of<TaskRepository>(context),
+              )..add(LoadTask()),
+            )
           ],
           child: MyHomePage(title: 'Your Tasks'),
         ),

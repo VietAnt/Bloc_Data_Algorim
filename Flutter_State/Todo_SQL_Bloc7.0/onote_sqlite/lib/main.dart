@@ -12,10 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => TodoBloc(),
-      child: const MaterialApp(
-        home: FirstScreen(),
+    return MaterialApp(
+      home: BlocProvider(
+        create: (context) => TodoBloc(),
+        child: const MaterialApp(
+          home: FirstScreen(),
+        ),
       ),
     );
   }

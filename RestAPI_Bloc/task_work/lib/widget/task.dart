@@ -20,10 +20,11 @@ class TaskWidget extends StatelessWidget {
                 width: 2,
                 color: task.isComplete
                     ? const Color(0xFF272f24)
-                    : Colors.transparent),
+                    : Colors.transparent,
+                    ),
             color: task.isComplete
-                ? Theme.of(context).backgroundColor
-                : Color.fromARGB(255, 242, 240, 238),
+                ? Theme.of(context).colorScheme.background
+                : const Color.fromARGB(255, 242, 240, 238),
           ),
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.all(15),
