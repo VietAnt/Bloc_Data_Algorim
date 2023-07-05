@@ -66,7 +66,7 @@ class CartList extends StatelessWidget {
   }
 }
 
-//Todo: CartTotal
+//Todo: 2.CartTotal
 class CartTotal extends StatelessWidget {
   const CartTotal({super.key});
 
@@ -81,12 +81,11 @@ class CartTotal extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Another way to listen to a model's change is to include
-            // the Consumer widget. This widget will automatically listen
-            // to CartModel and rerun its builder on every change.
-            //
-            // The important thing is that it will not rebuild
-            // the rest of the widgets in this build method.
+            // Một cách khác để lắng nghe sự thay đổi của model là bao gồm
+            // tiện ích Người tiêu dùng. Widget này sẽ tự động lắng nghe
+            // tới CartModel và chạy lại trình tạo của nó sau mỗi lần thay đổi
+            // Điều quan trọng là nó sẽ không xây dựng lại
+            // phần còn lại của các widget trong phương thức xây dựng này.
             Consumer<CartModel>(
               builder: (context, cart, child) =>
                   Text('\$${cart.totalPrice}', style: hugeStyle),
@@ -95,7 +94,8 @@ class CartTotal extends StatelessWidget {
             FilledButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Buying not supported yet.')));
+                  const SnackBar(content: Text('Buying not supported yet.')),
+                );
               },
               style: TextButton.styleFrom(foregroundColor: Colors.white),
               child: const Text('BUY'),

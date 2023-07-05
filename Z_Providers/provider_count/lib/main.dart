@@ -18,9 +18,9 @@ void main() {
   );
 }
 
-/// Simplest possible model, with just one field
-/// [ChangeNotifier] is a class in `flutter:foundation`. [Counter] does
-/// _not_ depend on Provider.
+/// Mô hình đơn giản nhất có thể, chỉ với một trường
+/// [ChangeNotifier] là một lớp trong `flutter:foundation`. [Bộ đếm] không
+/// _không_ phụ thuộc vào Nhà cung cấp.
 class Counter with ChangeNotifier {
   int value = 0;
 
@@ -88,8 +88,7 @@ class MyHomePage extends StatelessWidget {
           // Vì chúng tôi đang ở trong một cuộc gọi lại sẽ được gọi bất cứ khi nào người dùng
           // nhấn vào FloatingActionButton, chúng ta không ở trong phương thức xây dựng ở đây.
           // Chúng ta nên sử dụng context.read().
-          var counter = context.read<Counter>();
-          counter.increment();
+          context.read<Counter>().increment();
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

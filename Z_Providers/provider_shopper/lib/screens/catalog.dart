@@ -15,10 +15,13 @@ class MyCatalog extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           const _MyAppBar(),
-          const SliverToBoxAdapter(child: SizedBox(height: 12)),
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 12),
+          ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
-                (context, index) => _MyListItem(index)),
+              (context, index) => _MyListItem(index),
+            ),
           ),
         ],
       ),
@@ -40,7 +43,8 @@ class _AddButton extends StatelessWidget {
     // tiện ích này trừ khi phần cụ thể đó của mô hình thay đổi.
     // Điều này có thể dẫn đến cải thiện hiệu suất đáng kể.
     var isInCart = context.select<CartModel, bool>(
-      // Ở đây, chúng tôi chỉ quan tâm đến việc [item] có trong giỏ hàng hay không.
+      // Ở đây, chúng tôi chỉ quan tâm đến việc [item]
+      // có trong giỏ hàng hay không.
       (cart) => cart.items.contains(item),
     );
 
@@ -98,8 +102,8 @@ class _MyListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var item = context.select<CatalogModel, Item>(
-        // Ở đây, chúng tôi chỉ quan tâm đến mục tại [index]. chúng tôi không quan tâm
-        // về bất kỳ thay đổi nào khác.
+        // Ở đây, chúng tôi chỉ quan tâm đến mục tại [index].
+        //chúng tôi không quan tâm về bất kỳ thay đổi nào khác.
         (catalog) => catalog.getByPosition(index));
 
     var textTheme = Theme.of(context).textTheme.titleLarge;
